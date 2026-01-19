@@ -10,7 +10,6 @@
 ## 📋 Table of Contents
 
 - [Overview](#overview)
-- [Demo](#demo)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
@@ -20,12 +19,6 @@
 ## 🎯 Overview
 
 Sport Vita Dashboard is a modern web application designed to help educational institutions manage their sports programs efficiently. It provides comprehensive tools for tracking student athletes' health metrics, managing coaching staff, and visualizing performance data through interactive dashboards.
-
-### 🎬 Demo
-
-🔗 **[Live Demo](https://sport-vita-dashboard.vercel.app)** _(if deployed)_
-
-![Dashboard Preview](./docs/images/dashboard-preview.png) _(add screenshot)_
 
 ### 💡 Why I Built This
 
@@ -165,3 +158,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - GitHub: [@leonardomalta](https://github.com/leonardomalta) / [@leonardomalta](https://github.com/leonardomalta)
 - LinkedIn: [Leonardo Malta](https://linkedin.com/in/leonardomalta) / [Luiz Neves](https://www.linkedin.com/in/luiz-neves1227/)
+
