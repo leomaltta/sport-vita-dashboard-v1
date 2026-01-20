@@ -1,30 +1,15 @@
-/**
- * Database Seed Script (2025)
- * 
- * Seeds the database with initial data for development and testing
- * 
- * Usage:
- * - Add "prisma": { "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts" } to package.json
- * - Run: npx prisma db seed
- * 
- * @see https://www.prisma.io/docs/orm/prisma-migrate/workflows/seeding
- */
 
 import { PrismaClient } from '@prisma/client'
 import bcrypt from 'bcrypt'
 
 const prisma = new PrismaClient()
 
-/**
- * Main seed function
- */
 async function main() {
-  console.log('🌱 Starting database seeding...\n')
 
   // ============================================
   // SEED SHIFTS
   // ============================================
-  console.log('📊 Seeding shifts...')
+  console.log('Seeding shifts...')
   const shifts = await prisma.shift.createMany({
     data: [
       { name: 'Manhã' },
@@ -33,12 +18,12 @@ async function main() {
     ],
     skipDuplicates: true,
   })
-  console.log(`✅ Created ${shifts.count} shifts\n`)
+  console.log(`Created ${shifts.count} shifts\n`)
 
   // ============================================
   // SEED SUB-CATEGORIES (AGE GROUPS)
   // ============================================
-  console.log('📊 Seeding sub-categories...')
+  console.log('Seeding sub-categories...')
   const subs = await prisma.subCategory.createMany({
     data: [
       { name: 'Sub-6', idealBMI: 14.68 },
@@ -50,12 +35,12 @@ async function main() {
     ],
     skipDuplicates: true,
   })
-  console.log(`✅ Created ${subs.count} sub-categories\n`)
+  console.log(`Created ${subs.count} sub-categories\n`)
 
   // ============================================
   // SEED IDEAL BMI VALUES
   // ============================================
-  console.log('📊 Seeding ideal BMI values...')
+  console.log('Seeding ideal BMI values...')
   const imcIdeal = await prisma.idealBMI.createMany({
     data: [
       { subCategory: 'Sub-6', bmiValue: 14.68 },
@@ -67,12 +52,12 @@ async function main() {
     ],
     skipDuplicates: true,
   })
-  console.log(`✅ Created ${imcIdeal.count} ideal BMI records\n`)
+  console.log(`Created ${imcIdeal.count} ideal BMI records\n`)
 
   // ============================================
   // SEED SPORTS
   // ============================================
-  console.log('📊 Seeding sports...')
+  console.log('Seeding sports...')
   const sports = await prisma.sport.createMany({
     data: [
       {
@@ -132,18 +117,16 @@ async function main() {
     ],
     skipDuplicates: true,
   })
-  console.log(`✅ Created ${sports.count} sports\n`)
+  console.log(`Created ${sports.count} sports\n`)
 
   // ============================================
   // SEED ADMIN USER
   // ============================================
-  console.log('👤 Seeding admin user...')
-  console.log('🎉 Database seeding completed successfully!')
+  console.log('Seeding admin user...')
+  console.log('Database seeding completed successfully!')
 }
 
-/**
- * Execute main function and handle cleanup
- */
+
 main()
   .then(async () => {
     await prisma.$disconnect()
